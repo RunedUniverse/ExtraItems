@@ -1,4 +1,4 @@
-package net.alphadragon.mc_plugins.extra_items.listeners;
+package net.runeduniverse.mc.plugins.extra_items.listeners;
 
 import java.util.Random;
 
@@ -24,11 +24,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import net.alphadragon.mc_plugins.extra_items.Main;
-import net.alphadragon.mc_plugins.extra_items.inventories.MagmaticAnvil;
-import net.alphadragon.mc_plugins.extra_items.items.Items;
-import net.alphadragon.mc_plugins.extra_items.items.Tools;
 import net.md_5.bungee.api.ChatColor;
+import net.runeduniverse.mc.plugins.extra_items.Main;
+import net.runeduniverse.mc.plugins.extra_items.inventories.MagmaticAnvil;
+import net.runeduniverse.mc.plugins.extra_items.items.Items;
+import net.runeduniverse.mc.plugins.extra_items.items.Tools;
 
 public class ActionListener implements Listener{
 	

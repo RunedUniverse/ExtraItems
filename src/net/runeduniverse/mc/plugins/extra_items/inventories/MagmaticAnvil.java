@@ -1,4 +1,4 @@
-package net.alphadragon.mc_plugins.extra_items.inventories;
+package net.runeduniverse.mc.plugins.extra_items.inventories;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

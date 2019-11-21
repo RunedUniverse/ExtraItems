@@ -1,4 +1,4 @@
-package net.alphadragon.mc_plugins.extra_items.items;
+package net.runeduniverse.mc.plugins.extra_items.items;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,10 +1,10 @@
-package net.alphadragon.mc_plugins.extra_items;
+package net.runeduniverse.mc.plugins.extra_items;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.alphadragon.mc_plugins.extra_items.commands.UpdateExecutor;
-import net.alphadragon.mc_plugins.extra_items.items.RecipeFactory;
-import net.alphadragon.mc_plugins.extra_items.listeners.ActionListener;
+import net.runeduniverse.mc.plugins.extra_items.commands.UpdateExecutor;
+import net.runeduniverse.mc.plugins.extra_items.items.RecipeFactory;
+import net.runeduniverse.mc.plugins.extra_items.listeners.ActionListener;
 
 public class Main extends JavaPlugin{
 	
@@ -28,7 +28,7 @@ public class Main extends JavaPlugin{
 	
 	@Override
 	public void onLoad() {
-		getLogger().info("loading >> ExtraItems from AlphaDragon coded by Pl4yingNight");
+		getLogger().info("loading >> ExtraItems from RunedUniverse coded by Pl4yingNight & SoulB");
 	}
 	
 }
