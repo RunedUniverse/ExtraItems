@@ -1,4 +1,8 @@
-main: extraitems.main
-name: extraItems
-version: 3.0
+main: net.alphadragon.mc_plugins.extra_items.Main
+name: ExtraItems
+version: 5.01
 author: PlayingNight
+api-version: 1.14
+commands:
+  recipes-update:
+    description: Updates all recipes for all players

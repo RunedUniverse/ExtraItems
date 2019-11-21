@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.alphadragon.mc_plugins</groupId>
+  <artifactId>net.alphadragon.mc_plugins.extra_items</artifactId>
+  <version>5.01</version>
+  <name>ItemExtension</name>
+  <description>An item extension (makes the live in an balanced way easier) for Minecraft Spigot Server</description>
+  
+  
+  <repositories>
+    <repository>
+        <id>spigot-repo</id>
+        <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+</repositories>
+<dependencies>
+    <!--Spigot API-->
+    <dependency>
+           <groupId>org.spigotmc</groupId>
+           <artifactId>spigot-api</artifactId>
+           <version>1.14-R0.1-SNAPSHOT</version>
+           <scope>provided</scope>
+    </dependency>
+</dependencies>
+  
+  
+  <build>
+  <sourceDirectory>src</sourceDirectory>
+    	<resources>
+      		<resource>
+      		
+        		<directory>./</directory>
+        		<includes>
+          			<include>**/config.yml</include>
+          			<include>**/plugin.yml</include>
+        		</includes>
+        		
+        		<excludes>
+        			<exclude>**/target/**</exclude>
+        		</excludes>
+        		
+      		</resource>
+    	</resources>
+    	
+    	<finalName>extra_items-${project.version}</finalName>
+    	
+    <plugins>
+    <plugin>
+        	<artifactId>maven-compiler-plugin</artifactId>
+        	<version>3.7.0</version>
+        	<configuration>
+          		<source>1.8</source>
+          		<target>1.8</target>
+        	</configuration>
+      	</plugin>
+    </plugins>
+  </build>
+</project>
