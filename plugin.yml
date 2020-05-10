@@ -1,8 +1,0 @@
-main: net.runeduniverse.mc.plugins.extra_items.Main
-name: ExtraItems
-version: 6.00
-author: RunedUniverse: PlayingNight, SoulB
-api-version: 1.14
-commands:
-  recipes-update:
-    description: Updates all recipes for the player
