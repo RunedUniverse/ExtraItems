@@ -1,50 +1,69 @@
-<dpkg key="default_items">
-	<multiblocks>
-		<structure key="dryingreck" inventory="furnace"
-			rotate="true">
-			<block x="0" y="0" z="0" key="minecraft:campfire" />
-			<block x="0" y="-1" z="0" key="minecraft:magma_block" />
-			<block x="-1" y="0" z="0" key="minecraft:fence|minecraft:wall" />
-			<block x="1" y="0" z="0" key="minecraft:fence|minecraft:wall" />
-		</structure>
-	</multiblocks>
-	<items>
+<dpkg key="default_items"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+      xs:noNamespaceSchemaLocation="extra-items.xsd">
+    <multiblocks>
+        <structure key="dryingreck" inventory="FURNACE"
+                   rotateable="true">
+            <block x="0" y="0" z="0" key="minecraft:campfire"/>
+            <block x="0" y="-1" z="0" key="minecraft:magma_block"/>
+            <block x="-1" y="0" z="0" key="minecraft:fence|minecraft:wall"/>
+            <block x="1" y="0" z="0" key="minecraft:fence|minecraft:wall"/>
+        </structure>
+    </multiblocks>
+    <items>
 
-		<item key="dwarfen_pickaxe" base="minecraft:iron_pickaxe"
-			type="tool" unlocked="true">
-			<!-- namespacedkey: [extraitems:default_items:dwarfen_pickaxe] -->
-			<names>
-				<name locale="en">Dwarfen Pickaxe</name>
-				<name locale="de">Zwergen Spitzhacke</name>
-			</names>
-			<recipe table="craftingtable" type="shaped">
-				<!-- SLOT CRAFTING -->
-				<!-- 0 1 2 -->
-				<!-- 3 4 5 -->
-				<!-- 6 7 8 -->
-				<item slot="0" key="minecraft:diamond" />
-				<item slot="1" key="minecraft:diamond" />
-				<item slot="2" key="minecraft:diamond" />
-				<item slot="4" key="minecraft:iron_pickaxe" />
-				<item slot="6" key="minecraft:leather" />
-				<item slot="7" key="minecraft:iron_ingot" />
-				<item slot="8" key="minecraft:leather" />
-			</recipe>
-			<enchantments>
-				<unbreakable />
-				<enchantment key="efficiency" value="4" />
-			</enchantments>
-			<texture type="item" path="dwarfen_pick.png" />
-		</item>
-		<item key="dried-flesh" base="minecraft:cooked_mutton"
-			type="food" unlocked="true">
-			<name locale="en">Dried Mutton</name>
-			<recipe table="dryingreck" type="shapeless" amount="4">
-				<item key="minecraft:raw_mutton" />
-			</recipe>
-		</item>
-	</items>
+        <item key="dwarfen_pickaxe" base="minecraft:iron_pickaxe"
+              type="TOOL" unlocked="true">
+            <!-- namespacedkey: [extraitems:default_items:dwarfen_pickaxe] -->
+            <names>
+                <name locale="en">Dwarfen Pickaxe</name>
+                <name locale="de">Zwergen Spitzhacke</name>
+            </names>
+            <recipes>
+                <shaped table="crafting">
+                    <!-- SLOT CRAFTING -->
+                    <!-- 0 1 2 -->
+                    <!-- 3 4 5 -->
+                    <!-- 6 7 8 -->
+                    <item slot="0" key="minecraft:diamond"/>
+                    <item slot="1" key="minecraft:diamond"/>
+                    <item slot="2" key="minecraft:diamond"/>
+                    <item slot="4" key="minecraft:iron_pickaxe"/>
+                    <item slot="6" key="minecraft:leather"/>
+                    <item slot="7" key="minecraft:iron_ingot"/>
+                    <item slot="8" key="minecraft:leather"/>
+                </shaped>
+            </recipes>
 
+            <enchantments>
+                <unbreakable/>
+                <enchantment type="EFFICIENCY" value="4"/>
+            </enchantments>
+            <textures>
+                <texture type="ITEM" path="dwarfen_pick.png"/>
+            </textures>
+        </item>
+        <item key="dried-flesh" base="minecraft:cooked_mutton"
+              type="FOOD" unlocked="true">
+            <name locale="en">Dried Mutton</name>
+            <recipes>
+                <processing table="dryingreck" amount="4">
+                    <item key="minecraft:raw_mutton"/>
+                </processing>
+            </recipes>
+
+        </item>
+        <item key="steel" base="minecraft:iron" type="RESOURCE"
+              unlocked="true">
+            <name locale="en">Steel</name>
+            <recipes>
+                <shapeless table="crafting" amount="1">
+                    <item key="minecraft:iron"/>
+                    <item key="minecraft:coal"/>
+                </shapeless>
+            </recipes>
+        </item>
+    </items>
 
 
 </dpkg>

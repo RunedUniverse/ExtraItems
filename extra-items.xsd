@@ -1,0 +1,355 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- BASIC TYPES -->
+    <xs:simpleType name="keyType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="namespacedType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="itemStatusType">
+        <xs:restriction>
+            <xs:enumeration value="ITEM"/>
+            <xs:enumeration value="WEAPON"/>
+            <xs:enumeration value="FOOD"/>
+            <xs:enumeration value="TOOL"/>
+            <xs:enumeration value="ARMOR"/>
+            <xs:enumeration value="RESOURCE"/>
+            <xs:enumeration value="BLOCK"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="inventoryStatusType">
+        <xs:restriction>
+            <xs:enumeration value="CRAFTING"/>
+            <xs:enumeration value="FURNACE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="localeType">
+        <xs:restriction>
+            <xs:enumeration value="en"/>
+            <xs:enumeration value="de"/>
+            <xs:enumeration value="af_za"/>
+            <xs:enumeration value="ar_sa"/>
+            <xs:enumeration value="ast_es"/>
+            <xs:enumeration value="az_az"/>
+            <xs:enumeration value="be_by"/>
+            <xs:enumeration value="bg_bg"/>
+            <xs:enumeration value="br_fr"/>
+            <xs:enumeration value="brb"/>
+            <xs:enumeration value="bs_BA"/>
+            <xs:enumeration value="ca_es"/>
+            <xs:enumeration value="cs_cz"/>
+            <xs:enumeration value="cy_gb"/>
+            <xs:enumeration value="da_dk"/>
+            <xs:enumeration value="de_at"/>
+            <xs:enumeration value="de_ch"/>
+            <xs:enumeration value="de_de"/>
+            <xs:enumeration value="el_gr"/>
+            <xs:enumeration value="en_au"/>
+            <xs:enumeration value="en_ca"/>
+            <xs:enumeration value="en_gb"/>
+            <xs:enumeration value="en_nz"/>
+            <xs:enumeration value="en_7s"/>
+            <xs:enumeration value="en_ud"/>
+            <xs:enumeration value="en_us"/>
+            <xs:enumeration value="enp"/>
+            <xs:enumeration value="en_ws"/>
+            <xs:enumeration value="eo_uy"/>
+            <xs:enumeration value="es_ar"/>
+            <xs:enumeration value="es_CL"/>
+            <xs:enumeration value="es_es"/>
+            <xs:enumeration value="es_mx"/>
+            <xs:enumeration value="es_uy"/>
+            <xs:enumeration value="es_ve"/>
+            <xs:enumeration value="et_ee"/>
+            <xs:enumeration value="eu_es"/>
+            <xs:enumeration value="fa_ir"/>
+            <xs:enumeration value="fi_fi"/>
+            <xs:enumeration value="fil_ph"/>
+            <xs:enumeration value="fo_fo"/>
+            <xs:enumeration value="fr_ca"/>
+            <xs:enumeration value="fr_fr"/>
+            <xs:enumeration value="fy_nl"/>
+            <xs:enumeration value="ga_ie"/>
+            <xs:enumeration value="gd_gb"/>
+            <xs:enumeration value="gl_es"/>
+            <xs:enumeration value="gv_im"/>
+            <xs:enumeration value="haw"/>
+            <xs:enumeration value="he_il"/>
+            <xs:enumeration value="hi_in"/>
+            <xs:enumeration value="hr_hr"/>
+            <xs:enumeration value="hu_hu"/>
+            <xs:enumeration value="hy_am"/>
+            <xs:enumeration value="id_id"/>
+            <xs:enumeration value="isv"/>
+            <xs:enumeration value="ig_ng"/>
+            <xs:enumeration value="io_en"/>
+            <xs:enumeration value="is_is"/>
+            <xs:enumeration value="it_it"/>
+            <xs:enumeration value="ja_jp"/>
+            <xs:enumeration value="jbo"/>
+            <xs:enumeration value="ka_ge"/>
+            <xs:enumeration value="kab_dz"/>
+            <xs:enumeration value="kn_in"/>
+            <xs:enumeration value="ko_kr"/>
+            <xs:enumeration value="ksh_de"/>
+            <xs:enumeration value="kw_gb"/>
+            <xs:enumeration value="la_va"/>
+            <xs:enumeration value="lb_lu"/>
+            <xs:enumeration value="li_li"/>
+            <xs:enumeration value="lol_aa"/>
+            <xs:enumeration value="lt_lt"/>
+            <xs:enumeration value="lv_lv"/>
+            <xs:enumeration value="mi_nz"/>
+            <xs:enumeration value="mk_mk"/>
+            <xs:enumeration value="mn_mn"/>
+            <xs:enumeration value="moh_us"/>
+            <xs:enumeration value="ms_my"/>
+            <xs:enumeration value="mt_mt"/>
+            <xs:enumeration value="nds_de"/>
+            <xs:enumeration value="nl_be"/>
+            <xs:enumeration value="nl_nl"/>
+            <xs:enumeration value="nn_no"/>
+            <xs:enumeration value="no_no"/>
+            <xs:enumeration value="nb_no"/>
+            <xs:enumeration value="nuk"/>
+            <xs:enumeration value="oc_fr"/>
+            <xs:enumeration value="oj_ca"/>
+            <xs:enumeration value="ovd_se"/>
+            <xs:enumeration value="pl_pl"/>
+            <xs:enumeration value="pt_br"/>
+            <xs:enumeration value="pt_pt"/>
+            <xs:enumeration value="qya_aa"/>
+            <xs:enumeration value="ro_ro"/>
+            <xs:enumeration value="ru_ru"/>
+            <xs:enumeration value="sme"/>
+            <xs:enumeration value="sk_sk"/>
+            <xs:enumeration value="sl_si"/>
+            <xs:enumeration value="so_so"/>
+            <xs:enumeration value="sq_al"/>
+            <xs:enumeration value="sr_sp"/>
+            <xs:enumeration value="sv_se"/>
+            <xs:enumeration value="swg"/>
+            <xs:enumeration value="sxu"/>
+            <xs:enumeration value="szl"/>
+            <xs:enumeration value="ta_IN"/>
+            <xs:enumeration value="th_th"/>
+            <xs:enumeration value="tlh_aa"/>
+            <xs:enumeration value="tr_tr"/>
+            <xs:enumeration value="tt_ru"/>
+            <xs:enumeration value="tzl_tzl"/>
+            <xs:enumeration value="uk_ua"/>
+            <xs:enumeration value="ca-val_es"/>
+            <xs:enumeration value="vec_it"/>
+            <xs:enumeration value="vi_vn"/>
+            <xs:enumeration value="vmf_de"/>
+            <xs:enumeration value="yo_ng"/>
+            <xs:enumeration value="zh_cn"/>
+            <xs:enumeration value="zh_tw"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="itemNameType" mixed="true">
+        <xs:attribute name="locale" type="localeType"/>
+    </xs:complexType>
+
+    <xs:complexType name="enchantmentType">
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:enumeration value="AQUA_AFFINITY"/>
+                    <xs:enumeration value="BANE_OF_ARTHROPODS"/>
+                    <xs:enumeration value="BLAST_PROTECTION"/>
+                    <xs:enumeration value="CHANNELING"/>
+                    <!-- 1.16 <xs:enumeration value="CHOPPING"/>-->
+                    <xs:enumeration value="CURSE_OF_BINDING"/>
+                    <xs:enumeration value="CURSE_OF_VANISHING"/>
+                    <xs:enumeration value="DEPTH_STRIDER"/>
+                    <xs:enumeration value="EFFICIENCY"/>
+                    <xs:enumeration value="FEATHER_FALLING"/>
+                    <xs:enumeration value="FIRE_ASPECT"/>
+                    <xs:enumeration value="FIRE_PROTECTION"/>
+                    <xs:enumeration value="FLAME"/>
+                    <xs:enumeration value="FORTUNE"/>
+                    <xs:enumeration value="FROST_WALKER"/>
+                    <xs:enumeration value="IMPALING"/>
+                    <xs:enumeration value="INFINITY"/>
+                    <xs:enumeration value="KNOCKBACK"/>
+                    <xs:enumeration value="LOOTING"/>
+                    <xs:enumeration value="LOYALTY"/>
+                    <xs:enumeration value="LUCK_OF_THE_SEA"/>
+                    <xs:enumeration value="LURE"/>
+                    <xs:enumeration value="MENDING"/>
+                    <xs:enumeration value="MULTISHOT"/>
+                    <xs:enumeration value="PIERCING"/>
+                    <xs:enumeration value="POWER"/>
+                    <xs:enumeration value="PROJECTILE_PROTECTION"/>
+                    <xs:enumeration value="PROTECTION"/>
+                    <xs:enumeration value="PUNCH"/>
+                    <xs:enumeration value="QUICK_CHARGE"/>
+                    <xs:enumeration value="RESPIRATION"/>
+                    <xs:enumeration value="RIPTIDE"/>
+                    <xs:enumeration value="SHARPNESS"/>
+                    <xs:enumeration value="SILK_TOUCH"/>
+                    <xs:enumeration value="SMITE"/>
+                    <!-- 1.16 <xs:enumeration value="SOUL_SPEED"/>-->
+                    <xs:enumeration value="SWEEPING_EDGE"/>
+                    <xs:enumeration value="THORNS"/>
+                    <xs:enumeration value="UNBREAKING"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="value" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="textureType">
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:enumeration value="ICON"/>
+                    <xs:enumeration value="ITEM"/>
+                    <xs:enumeration value="BLOCK"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="path" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- RECIPE TYPES -->
+    <xs:complexType name="shapedRecipeType">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="item">
+                <xs:complexType>
+                    <!-- SLOT CRAFTING -->
+                    <!-- 0 1 2 -->
+                    <!-- 3 4 5 -->
+                    <!-- 6 7 8 -->
+                    <xs:attribute name="slot" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="0"/>
+                                <xs:maxInclusive value="8"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="key" type="namespacedType" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="table" type="xs:string" use="required"/>
+        <xs:attribute name="amount" type="xs:integer" default="1"/>
+    </xs:complexType>
+
+    <xs:complexType name="shapelessRecipeType">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="item">
+                <xs:complexType>
+                    <xs:attribute name="key" type="namespacedType" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="table" type="xs:string" use="required"/>
+        <xs:attribute name="amount" type="xs:integer" default="1"/>
+    </xs:complexType>
+
+    <xs:complexType name="processingRecipeType">
+        <xs:all>
+            <xs:element name="item">
+                <xs:complexType>
+                    <xs:attribute name="key" type="namespacedType" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="table" type="xs:string" use="required"/>
+        <xs:attribute name="amount" type="xs:integer" default="1"/>
+    </xs:complexType>
+
+    <!-- STRUCTURAL TYPES-->
+
+
+    <xs:complexType name="structureType">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="block">
+                <xs:complexType>
+                    <xs:attribute name="x" type="xs:integer" use="required"/>
+                    <xs:attribute name="y" type="xs:integer" use="required"/>
+                    <xs:attribute name="z" type="xs:integer" use="required"/>
+                    <xs:attribute name="key" type="namespacedType" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="key" type="keyType" use="required"/>
+        <xs:attribute name="inventory" type="inventoryStatusType" use="required"/>
+        <xs:attribute name="rotateable" type="xs:boolean" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="itemType">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="name" type="itemNameType"/>
+                <xs:element name="names">
+                    <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded">
+                            <xs:element name="name" type="itemNameType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:element name="recipes" minOccurs="0">
+                <xs:complexType>
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element name="shaped" type="shapedRecipeType"/>
+                        <xs:element name="shapeless" type="shapelessRecipeType"/>
+                        <xs:element name="processing" type="processingRecipeType"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="enchantments" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="unbreakable"/>
+                        <xs:element name="enchantment" type="enchantmentType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="textures" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="unbounded">
+                        <xs:element name="texture" type="textureType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="key" type="keyType" use="required"/>
+        <xs:attribute name="base" type="namespacedType" use="required"/>
+        <xs:attribute name="type" type="itemStatusType" use="required"/>
+        <xs:attribute name="unlocked" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <xs:complexType name="datapackType">
+        <xs:sequence>
+            <xs:element name="multiblocks" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="structure" type="structureType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="items" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="unbounded">
+                        <xs:element name="item" type="itemType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="key" type="keyType" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="dpkg" type="datapackType"/>
+</xs:schema>
