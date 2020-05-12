@@ -1,6 +1,6 @@
 <dpkg key="default_items"
       xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-      xs:noNamespaceSchemaLocation="extra-items.xsd">
+      xs:noNamespaceSchemaLocation="http://runeduniverse.net:8081/repository/maven-releases/net/runeduniverse/mc/plugins/extraitems/6.0.0/extraitems-6.0.0.xsd">
     <multiblocks>
         <structure key="dryingreck" inventory="FURNACE"
                    rotateable="true">
