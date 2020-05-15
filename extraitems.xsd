@@ -335,7 +335,7 @@
         <xs:sequence>
             <xs:element name="multiblocks" minOccurs="0">
                 <xs:complexType>
-                    <xs:sequence>
+                    <xs:sequence maxOccurs="unbounded">
                         <xs:element name="structure" type="structureType"/>
                     </xs:sequence>
                 </xs:complexType>

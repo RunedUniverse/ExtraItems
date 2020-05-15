@@ -1,13 +1,16 @@
 <dpkg key="default_items"
       xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-      xs:noNamespaceSchemaLocation="http://runeduniverse.net:8081/repository/maven-releases/net/runeduniverse/mc/plugins/extraitems/6.0.0/extraitems-6.0.0.xsd">
+      xs:noNamespaceSchemaLocation="http://runeduniverse.net:8081/repository/maven-releases/net/runeduniverse/mc/plugins/extraitems/dpkg-1.0/extraitems-dpkg-1.0.xsd">
     <multiblocks>
-        <structure key="dryingreck" inventory="FURNACE"
+        <structure key="dryingrack" inventory="FURNACE"
                    rotateable="true">
             <block x="0" y="0" z="0" key="minecraft:campfire"/>
             <block x="0" y="-1" z="0" key="minecraft:magma_block"/>
             <block x="-1" y="0" z="0" key="minecraft:fence|minecraft:wall"/>
             <block x="1" y="0" z="0" key="minecraft:fence|minecraft:wall"/>
+        </structure>
+        <structure key="crafting" inventory="CRAFTING" rotateable="false">
+            <block x="0" y="0" z="0" key="minecraft:crafting_table"/>
         </structure>
     </multiblocks>
     <items>
@@ -47,7 +50,7 @@
               type="FOOD" unlocked="true">
             <name locale="en">Dried Mutton</name>
             <recipes>
-                <processing table="dryingreck" amount="4">
+                <processing table="dryingrack" amount="4">
                     <item key="minecraft:raw_mutton"/>
                 </processing>
             </recipes>
