@@ -17,7 +17,7 @@
             <xs:enumeration value="BLOCK"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="inventoryStatusType">
+    <xs:simpleType name="processType">
         <xs:restriction>
             <xs:enumeration value="CRAFTING"/>
             <xs:enumeration value="FURNACE"/>
@@ -284,7 +284,7 @@
             </xs:element>
         </xs:sequence>
         <xs:attribute name="key" type="keyType" use="required"/>
-        <xs:attribute name="inventory" type="inventoryStatusType" use="required"/>
+        <xs:attribute name="inventory" type="processType" use="required"/>
         <xs:attribute name="rotateable" type="xs:boolean" use="required"/>
     </xs:complexType>
 
